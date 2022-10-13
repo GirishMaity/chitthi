@@ -10,7 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -18,7 +18,10 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
   const toast = useToast();
-  const history = useHistory();
+  const history = createBrowserHistory({
+    forceRefresh: true,
+  });
+  //const history = useHistory();
 
   const submitHandler = async () => {
     setLoading(true);

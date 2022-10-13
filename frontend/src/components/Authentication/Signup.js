@@ -9,7 +9,7 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import { useHistory } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import axios from "axios";
 
 const Signup = () => {
@@ -20,7 +20,9 @@ const Signup = () => {
   const [confirmpassword, setConfirmpassword] = useState();
   const [pic, setPic] = useState();
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const history = createBrowserHistory({
+    forceRefresh: true,
+  });
   const toast = useToast();
 
   const postDetails = (pics) => {
