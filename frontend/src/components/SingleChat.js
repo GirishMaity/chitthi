@@ -139,7 +139,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           setFetchAgain(!fetchAgain);
         }
       } else {
-        setMessages(...messages, newMessageRecieved);
+        setMessages([...messages, newMessageRecieved]);
       }
     });
   });
